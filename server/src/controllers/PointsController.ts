@@ -88,8 +88,6 @@ class PointsController {
         };
       });
 
-    console.log('Itens: ', pointItems);
-
     await trx('point_items').insert(pointItems);
 
     await trx.commit();
