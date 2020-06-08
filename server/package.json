@@ -9,7 +9,6 @@
     "knex:all:ts": "yarn knex:migrate:ts && yarn knex:seed:ts",
     "knex:migrate:ts": "knex --knexfile knexfile.ts migrate:latest",
     "knex:seed:ts": "knex --knexfile knexfile.ts seed:run",
-    "postinstall": "yarn build",
     "build": "tsc && yarn uploads",
     "uploads": "cp -r ./uploads/ ./dist/uploads/",
     "start": "node dist/src/server.js",
