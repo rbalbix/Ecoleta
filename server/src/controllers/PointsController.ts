@@ -75,6 +75,8 @@ class PointsController {
     };
 
     // const insertedIds = await trx('points').insert(point);
+    console.log('Ponto: ', point);
+
     const insertedIds = await knex('points').insert(point);
 
     const point_id = insertedIds[0];
