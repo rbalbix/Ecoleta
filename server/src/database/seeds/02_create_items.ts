@@ -1,6 +1,8 @@
 import Knex from 'knex';
 
 export async function seed(knex: Knex) {
+  await knex('items').delete();
+
   await knex('items').insert([
     { title: 'Lâmpadas', image: 'lampadas.svg' },
     { title: 'Pilhas e Baterias', image: 'baterias.svg' },
@@ -8,5 +10,5 @@ export async function seed(knex: Knex) {
     { title: 'Resíduos Eletrônicos', image: 'eletronicos.svg' },
     { title: 'Resíduos Orgânicos', image: 'organicos.svg' },
     { title: 'Óleo de Cozinha', image: 'oleo.svg' },
-  ])
+  ]);
 }

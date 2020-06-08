@@ -61,7 +61,7 @@ class PointsController {
       items,
     } = request.body;
 
-    // const trx = await knex.transaction();
+    const trx = await knex.transaction();
 
     const point = {
       image: request.file.filename,
@@ -74,14 +74,9 @@ class PointsController {
       uf,
     };
 
-    // const insertedIds = await trx('points').insert(point);
-    console.log('Ponto: ', point);
-
-    const insertedIds = await knex('points').insert(point);
+    const insertedIds = await trx('points').insert(point).returning('id');
 
     const point_id = insertedIds[0];
-
-    console.log('point_id: ', insertedIds);
 
     const pointItems = items
       .split(',')
@@ -95,10 +90,9 @@ class PointsController {
 
     console.log('Itens: ', pointItems);
 
-    // await trx('point_items').insert(pointItems);
-    await knex('point_items').insert(pointItems);
+    await trx('point_items').insert(pointItems);
 
-    // await trx.commit();
+    await trx.commit();
 
     return response.json({
       id: point_id,
