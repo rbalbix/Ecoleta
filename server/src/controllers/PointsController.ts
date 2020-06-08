@@ -78,7 +78,7 @@ class PointsController {
 
     const point_id = insertedIds[0];
 
-    console.log('point_id: ', point_id);
+    console.log('point_id: ', insertedIds);
 
     const pointItems = items
       .split(',')
