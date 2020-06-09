@@ -1,7 +1,8 @@
 import Knex from 'knex';
 
 export async function seed(knex: Knex) {
-  await knex('items').truncate();
+  // await knex('items').truncate();
+  await knex.raw('TRUNCATE TABLE items CASCADE');
 
   await knex('items').insert([
     { title: 'Lâmpadas', image: 'lampadas.svg' },
