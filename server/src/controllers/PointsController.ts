@@ -5,9 +5,14 @@ class PointsController {
   async index(request: Request, response: Response) {
     const { city, uf, items } = request.query;
 
-    const parsedItems = String(items)
-      .split(',')
-      .map((item) => Number(item.trim()));
+    let parsedItems;
+    if (items === undefined) {
+      parsedItems = [0];
+    } else {
+      parsedItems = String(items)
+        .split(',')
+        .map((item) => Number(item.trim()));
+    }
 
     const points = await knex('points')
       .join('point_items', 'points.id', '=', 'point_items.point_id')

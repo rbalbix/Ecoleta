@@ -4,7 +4,7 @@ const env = process.env.NODE_ENV;
 
 //DATABASE_URL
 
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const client = env === 'production' ? 'pg' : 'sqlite';
 const connection =

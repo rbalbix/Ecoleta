@@ -3,7 +3,7 @@ import path from 'path';
 
 const env = process.env.NODE_ENV;
 
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 //DATABASE_URL
 
