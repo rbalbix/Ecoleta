@@ -1,7 +1,7 @@
 import Knex from 'knex';
 
 export async function seed(knex: Knex) {
-  await knex('items').delete();
+  await knex('items').truncate();
 
   await knex('items').insert([
     { title: 'Lâmpadas', image: 'lampadas.svg' },
