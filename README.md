@@ -32,6 +32,7 @@ Ecoleta
 This project was developed with the following technologies:
 
 - [Node.js](https://nodejs.org/en/)
+- [Typescript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/)
 - [Postgres](https://www.postgresql.org/)
 - [SQLite](https://www.sqlite.org/index.html)
